@@ -505,14 +505,11 @@ console.log(unmatch);
 console.log("--- Esercizio 19 --- ");
 
 function removeIndex(number) {
-  for (let i = 0; i > movies.length; i++) {
-    if (movies[i] === number) {
-      movies.splice(number, 1);
-    }
-  }
+  movies.splice(number, 1);
 }
 
-console.log(removeIndex(0));
+removeIndex(1);
+console.log(movies)
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
