@@ -212,6 +212,14 @@ console.log("--- Esercizio 8 --- ");
 
 const myArray = [];
 
+function rollTheDices(number) {
+  myArray.push(dice())
+  myArray.forEach((element) => {
+
+  })
+}
+
+console.log(rollTheDices(2))
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
@@ -379,10 +387,10 @@ const movies = [
 console.log("--- Esercizio 11 --- ");
 
 function deleteProp (object, string) {
-  return delete object.string;
+  return object = delete string;
 }
 
-console.log(deleteProp(movies, 'Year'));
+console.log(deleteProp(movies,'Year'));
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
@@ -589,6 +597,14 @@ seven();
   ***
 
 */
+
+function halfTree(number) {
+  for (let i = 0; i <= number; i++) {
+    let asterisk = '*';
+    console.log(asterisk.repeat(i));
+  }
+}
+halfTree(3)
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
