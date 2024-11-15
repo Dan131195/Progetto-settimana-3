@@ -213,12 +213,15 @@ console.log("--- Esercizio 8 --- ");
 
 const myArray = [];
 
-function rollTheDices() {
+function rollTheDices(number) {
+  for (let i = 0; i <= number; i++) {
+    dice();
+  }
   myArray.push(dice());
   console.log(myArray);
 }
 
-rollTheDices();
+rollTheDices(3);
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
@@ -387,10 +390,11 @@ const movies = [
 console.log("--- Esercizio 11 --- ");
 
 function deleteProp(object, string) {
-  return (object = delete string);
+  return delete object;
 }
 
-console.log(deleteProp(movies, "Year"));
+deleteProp(movies, "ImdbID");
+console.log(movies)
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
@@ -619,6 +623,7 @@ function halfTree(number) {
     console.log(asterisk.repeat(i));
   }
 }
+
 halfTree(4);
 
 /* ESERCIZIO 28
