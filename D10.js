@@ -142,12 +142,13 @@ console.log(deleteOne("hello", false));
 
 console.log("--- Esercizio 5 --- ");
 
+let regexNumber = /^[0-9]d{0,9}(.d{1,2})?%?$/;
+
 function onlyLetters(string) {
-  let regexNumber = /^(?=.*\d)$/;
   if (!regexNumber.test(string)) {
-    return false;
+    return string;
   } else {
-    return true;
+    return string.replaceAll("");
   }
 }
 
@@ -212,14 +213,13 @@ console.log("--- Esercizio 8 --- ");
 
 const myArray = [];
 
-function rollTheDices(number) {
-  myArray.push(dice())
-  myArray.forEach((element) => {
-
-  })
+function rollTheDices() {
+  myArray.push(dice());
+  console.log(myArray);
 }
 
-console.log(rollTheDices(2))
+rollTheDices();
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
@@ -386,11 +386,11 @@ const movies = [
 
 console.log("--- Esercizio 11 --- ");
 
-function deleteProp (object, string) {
-  return object = delete string;
+function deleteProp(object, string) {
+  return (object = delete string);
 }
 
-console.log(deleteProp(movies,'Year'));
+console.log(deleteProp(movies, "Year"));
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
@@ -431,6 +431,7 @@ console.log("--- Esercizio 14 --- ");
 const onlyTheYears = (array) => {
   return array.map((element) => element.Year);
 };
+
 console.log(onlyTheYears(movies));
 
 /* ESERCIZIO 15
@@ -445,6 +446,7 @@ function onlyInLastMillennium(array) {
   });
   return newArray;
 }
+
 console.log(onlyInLastMillennium(movies));
 
 /* ESERCIZIO 16
@@ -478,12 +480,24 @@ console.log(searchByTitle("Lord"));
 
 console.log("--- Esercizio 18 --- ");
 
-function searchAndDivide (string) {
-  const match = [];
-  const unmatch = [];
+const match = [];
+const unmatch = [];
+
+function searchAndDivide(string) {
+  movies.forEach((element) => {
+    if (movies.Title.includes(string)) {
+      match.push(element);
+    } else {
+      unmatch.push(element)
+    }
+  })
+  
 }
 
-console.log (searchAndDivide('Lord'))
+searchAndDivide("Lord");
+console.log(match);
+console.log(unmatch);
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
@@ -525,6 +539,8 @@ two();
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
+
+console.log("--- Esercizio 22 --- ");
 
 function three() {
   const number3 = document.querySelectorAll("td");
@@ -598,13 +614,15 @@ seven();
 
 */
 
+console.log("--- Esercizio 27 --- ");
+
 function halfTree(number) {
   for (let i = 0; i <= number; i++) {
-    let asterisk = '*';
+    let asterisk = "*";
     console.log(asterisk.repeat(i));
   }
 }
-halfTree(3)
+halfTree(4);
 
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
@@ -626,4 +644,19 @@ console.log("--- Esercizio 28 --- ");
 
 console.log("--- Esercizio 29 --- ");
 
+function isItPrime(number) {
+  let prime = true;
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      prime = false;
+      break;
+    }
+  }
+  if (prime) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
 
+isItPrime(3);
