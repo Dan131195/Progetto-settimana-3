@@ -485,7 +485,7 @@ const unmatch = [];
 
 function searchAndDivide(string) {
   movies.forEach((element) => {
-    if (movies.Title.includes(string)) {
+    if (element.Title.includes(string)) {
       match.push(element);
     } else {
       unmatch.push(element)
